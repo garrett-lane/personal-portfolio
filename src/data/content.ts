@@ -118,7 +118,7 @@ export const credentials: Credential[] = [
   {
     name: "PenTest+",
     issuer: "CompTIA",
-    // No verification link provided yet — add one here (same certmetrics format as above).
+    // TODO: add verification link (same certmetrics format as above).
   },
   {
     name: "Office Specialist: Expert (Microsoft 365 Apps)",
@@ -222,8 +222,6 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Peer Mentor / Teaching Assistant",
     org: "Iowa State University — CPRE 1840, 1850 & 1860",
-    // NOTE: you said "Aug '25 to May '25" — assumed this means the 2025–26
-    // academic year (May 2026). Fix if that's not right.
     period: "Aug 2025 – May 2026",
     location: "Ames, IA",
     bullets: [
