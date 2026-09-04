@@ -118,7 +118,8 @@ export const credentials: Credential[] = [
   {
     name: "PenTest+",
     issuer: "CompTIA",
-    // TODO: add verification link (same certmetrics format as above).
+    verifyHref:
+      "https://cp.certmetrics.com/CompTIA/en/public/verify/credential/ff1de78a44c54dac80bf16b7e586cd3d",
   },
   {
     name: "Office Specialist: Expert (Microsoft 365 Apps)",
