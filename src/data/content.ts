@@ -71,7 +71,7 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
-    tag: "Project 2",
+    tag: "Embedded Systems — CPRE 2880",
     title: "[Project Title]",
     description: "[One to two sentence description — what it does and the problem it solves.]",
     role: "[Add your role]",
@@ -81,7 +81,7 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
-    tag: "Project 3",
+    tag: "Software Design & Development — COMS 3090",
     title: "[Project Title]",
     description: "[One to two sentence description — what it does and the problem it solves.]",
     role: "[Add your role]",
@@ -91,7 +91,7 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
-    tag: "Project 4",
+    tag: "Cyber Security Education — CPRE 5300",
     title: "[Project Title]",
     description: "[One to two sentence description — what it does and the problem it solves.]",
     role: "[Add your role]",
