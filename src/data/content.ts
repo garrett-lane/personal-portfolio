@@ -16,7 +16,7 @@ CTFs and figuring out how to put them back together more securely.`,
 // Small, non-highlight mention — rendered as a plain link, not a card.
 export const ethicsPaper = {
   label: "Read my paper on cybersecurity ethics",
-  href: "#",
+  href: "/cybersecurity-ethics-essay.pdf",
 };
 
 export type Goal = {
@@ -51,7 +51,10 @@ export const socials = [
 export type ProjectEntry = {
   tag?: string;
   title: string;
-  summary: string;
+  description: string;
+  role: string;
+  skillsGained: string[];
+  bigPicture: string;
   stack: string[];
   links: { label: string; href: string }[];
 };
@@ -60,9 +63,12 @@ export const projects: ProjectEntry[] = [
   {
     tag: "Senior Design Capstone",
     title: "Network Intrusion Detection System for Embedded IoT Devices",
-    summary: `A lightweight intrusion detection system designed to run on
+    description: `A lightweight intrusion detection system designed to run on
 resource-constrained IoT hardware, combining signature-based detection with
 anomaly detection to flag suspicious network traffic in real time.`,
+    role: "Team lead — architecture, detection engine, and hardware integration",
+    skillsGained: ["[Add skills or knowledge gained]"],
+    bigPicture: "[Add big-picture contribution — how this project fits into the broader field or your growth]",
     stack: ["Python", "Scapy", "Raspberry Pi", "React", "Flask"],
     links: [
       { label: "GitHub Repo", href: "https://github.com/garrett-lane/senior-design" },
@@ -72,21 +78,30 @@ anomaly detection to flag suspicious network traffic in real time.`,
   {
     tag: "Project 2",
     title: "[Project Title]",
-    summary: "[One to two sentence description — what it does, the problem it solves, and your role.]",
+    description: "[One to two sentence description — what it does and the problem it solves.]",
+    role: "[Add your role]",
+    skillsGained: ["[Add skills or knowledge gained]"],
+    bigPicture: "[Add big-picture contribution]",
     stack: ["[Tech]", "[Tech]"],
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
     tag: "Project 3",
     title: "[Project Title]",
-    summary: "[One to two sentence description — what it does, the problem it solves, and your role.]",
+    description: "[One to two sentence description — what it does and the problem it solves.]",
+    role: "[Add your role]",
+    skillsGained: ["[Add skills or knowledge gained]"],
+    bigPicture: "[Add big-picture contribution]",
     stack: ["[Tech]", "[Tech]"],
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
     tag: "Project 4",
     title: "[Project Title]",
-    summary: "[One to two sentence description — what it does, the problem it solves, and your role.]",
+    description: "[One to two sentence description — what it does and the problem it solves.]",
+    role: "[Add your role]",
+    skillsGained: ["[Add skills or knowledge gained]"],
+    bigPicture: "[Add big-picture contribution]",
     stack: ["[Tech]", "[Tech]"],
     links: [{ label: "GitHub Repo", href: "#" }],
   },
@@ -201,14 +216,22 @@ export const experience: ExperienceEntry[] = [
     org: "American Equity",
     period: "Aug 2026 – Present",
     location: "Des Moines, IA",
-    bullets: ["[Add role description — responsibilities, projects, and impact]"],
+    bullets: [
+      "Responsible for daily operations within the Information Security team",
+      "Respond to SIEM alerts, triaging and addressing incidents as they arise",
+      "Conduct regular security posture checks spanning SAST, DAST, endpoint protection, and vulnerability management",
+    ],
   },
   {
     role: "Information Security Intern",
     org: "American Equity",
     period: "Summer 2026",
     location: "Des Moines, IA",
-    bullets: ["[Add role description — responsibilities, projects, and impact]"],
+    bullets: [
+      "Gained experience with a wide range of cyber security tools within an enterprise environment through foundational intern projects and mentorship",
+      "Led the growth of the company's data-loss prevention (DLP) program through a transition to a new system with expanded capabilities",
+      "Facilitated regular security posture tasks to help ensure compliance and internet safety across the company",
+    ],
   },
   {
     role: "Teaching Assistant",
@@ -217,7 +240,8 @@ export const experience: ExperienceEntry[] = [
     location: "Ames, IA",
     bullets: [
       "Working under Dr. Julie Rursch",
-      "[Add responsibilities and highlights]",
+      "Delivered lab coursework for CYBE 2310 and 3310, courses in penetration testing and cryptography, to undergraduate students",
+      "Responsible for grading CYBE 2310 coursework, as well as validating functionality and upgrading labs for both courses",
     ],
   },
   {
@@ -227,7 +251,8 @@ export const experience: ExperienceEntry[] = [
     location: "Ames, IA",
     bullets: [
       "Working under Dr. Thomas Daniels",
-      "[Add responsibilities and highlights]",
+      "Mentored undergraduate students in CPRE 1850, helping them master C programming fundamentals and laboratory assignments",
+      "Delivered one-on-one instruction to clarify course material and improve student comprehension",
     ],
   },
   {
@@ -236,8 +261,8 @@ export const experience: ExperienceEntry[] = [
     period: "Aug 2025 – May 2026",
     location: "Ames, IA",
     bullets: [
-      "Working under Dr. Shana Moothedath",
-      "[Add project description and highlights]",
+      "Working under Dr. Shana Moothedath and Ph.D. student Mahesh Bhat",
+      "Conducted research on the use of machine learning to more efficiently identify wireless 6G network traffic for security classification",
     ],
   },
 ];

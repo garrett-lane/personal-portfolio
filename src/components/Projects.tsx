@@ -10,25 +10,52 @@ export default function Projects() {
         Featured Projects
       </h2>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+      <div className="mt-8 space-y-6">
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex flex-col rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent-soft/50"
+            className="rounded-2xl border border-border bg-surface p-8 transition-colors hover:border-accent-soft/50"
           >
             {project.tag && (
               <p className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
                 {project.tag}
               </p>
             )}
-            <h3 className="font-display mt-2 text-lg font-semibold text-text">
+            <h3 className="font-display mt-2 text-xl font-semibold text-text">
               {project.title}
             </h3>
-            <p className="mt-3 flex-1 whitespace-pre-line text-sm leading-relaxed text-text-muted">
-              {project.summary}
+            <p className="mt-3 whitespace-pre-line leading-relaxed text-text-muted">
+              {project.description}
             </p>
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <dl className="mt-6 grid gap-5 sm:grid-cols-2">
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
+                  My Role
+                </dt>
+                <dd className="mt-1.5 text-text-muted">{project.role}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
+                  Skills / Knowledge Gained
+                </dt>
+                <dd className="mt-1.5">
+                  <ul className="list-inside list-disc space-y-1 text-text-muted">
+                    {project.skillsGained.map((skill) => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
+                  Big-Picture Contribution
+                </dt>
+                <dd className="mt-1.5 text-text-muted">{project.bigPicture}</dd>
+              </div>
+            </dl>
+
+            <div className="mt-6 flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
@@ -39,7 +66,7 @@ export default function Projects() {
               ))}
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               {project.links.map((link) => (
                 <a
                   key={link.label}
