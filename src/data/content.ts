@@ -62,18 +62,13 @@ export type ProjectEntry = {
 export const projects: ProjectEntry[] = [
   {
     tag: "Senior Design Capstone",
-    title: "Network Intrusion Detection System for Embedded IoT Devices",
-    description: `A lightweight intrusion detection system designed to run on
-resource-constrained IoT hardware, combining signature-based detection with
-anomaly detection to flag suspicious network traffic in real time.`,
-    role: "Team lead — architecture, detection engine, and hardware integration",
+    title: "[Project Title]",
+    description: "[One to two sentence description — what it does and the problem it solves.]",
+    role: "[Add your role]",
     skillsGained: ["[Add skills or knowledge gained]"],
-    bigPicture: "[Add big-picture contribution — how this project fits into the broader field or your growth]",
-    stack: ["Python", "Scapy", "Raspberry Pi", "React", "Flask"],
-    links: [
-      { label: "GitHub Repo", href: "https://github.com/garrett-lane/senior-design" },
-      { label: "Final Report", href: "#" },
-    ],
+    bigPicture: "[Add big-picture contribution]",
+    stack: ["[Tech]", "[Tech]"],
+    links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
     tag: "Project 2",
