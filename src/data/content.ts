@@ -13,11 +13,17 @@ CTFs and figuring out how to put them back together more securely.`,
   email: "gthomp(at)iastate(dot)edu",
 };
 
-// Small, non-highlight mention — rendered as a plain link, not a card.
-export const ethicsPaper = {
-  label: "Read my paper on cybersecurity ethics",
-  href: "/cybersecurity-ethics-essay.pdf",
+export type Essay = {
+  title: string;
+  href: string;
 };
+
+export const essays: Essay[] = [
+  { title: "Cybersecurity Ethics Essay", href: "/cybersecurity-ethics-essay.pdf" },
+  { title: "Cumulative Reflection", href: "/cumulative-reflection.pdf" },
+  // TODO: add once written.
+  { title: "General Education Reflection Essay", href: "#" },
+];
 
 export type Goal = {
   heading: string;

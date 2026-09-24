@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Credentials from "./components/Credentials";
 import Coursework from "./components/Coursework";
+import Essays from "./components/Essays";
 import ScoutingAwards from "./components/ScoutingAwards";
 import FuturePlans from "./components/FuturePlans";
 import Footer from "./components/Footer";
@@ -20,6 +21,7 @@ export default function App() {
         <Experience />
         <Credentials />
         <Coursework />
+        <Essays />
         <ScoutingAwards />
         <FuturePlans />
       </main>

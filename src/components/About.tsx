@@ -1,4 +1,4 @@
-import { profile, ethicsPaper } from "../data/content";
+import { profile } from "../data/content";
 
 export default function About() {
   return (
@@ -12,12 +12,6 @@ export default function About() {
           {profile.bio}
         </p>
         <p className="mt-5 text-sm font-medium text-text">{profile.location}</p>
-        <a
-          href={ethicsPaper.href}
-          className="mt-4 inline-block text-sm text-accent-soft hover:underline"
-        >
-          {ethicsPaper.label} →
-        </a>
       </div>
     </section>
   );
