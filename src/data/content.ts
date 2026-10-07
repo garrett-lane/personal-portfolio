@@ -1,5 +1,3 @@
-// Placeholder content — swap these values out for your real info.
-
 export const profile = {
   name: "Garrett Thompson",
   tagline:
@@ -45,7 +43,7 @@ export const futurePlans: Goal[] = [
 
 export const socials = [
   { label: "GitHub", href: "https://github.com/garrett-lane" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/garrettthompson" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/garrettlthompson/" },
 ];
 
 export type ProjectEntry = {
