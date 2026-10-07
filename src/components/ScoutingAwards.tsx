@@ -21,7 +21,7 @@ export default function ScoutingAwards() {
             </p>
             <p className="mt-1 text-sm text-text-muted">
               {award.org}
-              {award.date && <> — {award.date}</>}
+              {award.date && <>, {award.date}</>}
             </p>
           </div>
         ))}

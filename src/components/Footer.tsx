@@ -10,7 +10,7 @@ export default function Footer() {
         Get in Touch
       </h2>
 
-      <div className="mt-6 rounded-2xl border border-border bg-surface p-8">
+      <div className="mt-6 rounded-2xl border border-border bg-surface p-6 sm:p-8">
         <div className="flex flex-wrap gap-3">
           <span
             title={profile.email}

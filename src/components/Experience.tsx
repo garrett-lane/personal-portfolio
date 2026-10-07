@@ -14,19 +14,19 @@ export default function Experience() {
         {experience.map((entry) => (
           <div
             key={`${entry.org}-${entry.role}`}
-            className="rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent-soft/50"
+            className="rounded-2xl border border-border bg-surface p-6 sm:p-7 transition-colors hover:border-accent-soft/50"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-lg font-semibold text-text">
                 {entry.role}
-                <span className="font-normal text-text-muted"> — {entry.org}</span>
+                <span className="font-normal text-text-muted">, {entry.org}</span>
               </h3>
               <span className="text-sm font-medium text-accent-soft">
                 {entry.period}
               </span>
             </div>
             <p className="mt-1 text-sm text-text-muted">{entry.location}</p>
-            <ul className="mt-4 list-inside list-disc space-y-1.5 text-text-muted">
+            <ul className="mt-4 list-disc pl-5 space-y-1.5 text-text-muted">
               {entry.bullets.map((bullet) => (
                 <li key={bullet}>{bullet}</li>
               ))}

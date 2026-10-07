@@ -14,7 +14,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="rounded-2xl border border-border bg-surface p-8 transition-colors hover:border-accent-soft/50"
+            className="rounded-2xl border border-border bg-surface p-6 sm:p-8 transition-colors hover:border-accent-soft/50"
           >
             {project.tag && (
               <p className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
@@ -40,7 +40,7 @@ export default function Projects() {
                   Skills / Knowledge Gained
                 </dt>
                 <dd className="mt-1.5">
-                  <ul className="list-inside list-disc space-y-1 text-text-muted">
+                  <ul className="list-disc pl-5 space-y-1 text-text-muted">
                     {project.skillsGained.map((skill) => (
                       <li key={skill}>{skill}</li>
                     ))}

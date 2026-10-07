@@ -19,6 +19,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Keeps section headings clear of the sticky nav after an anchor jump. */
+    scroll-padding-top: 2rem;
   }
 
   body {

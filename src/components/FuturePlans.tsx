@@ -14,12 +14,12 @@ export default function FuturePlans() {
         {futurePlans.map((goal) => (
           <div
             key={goal.heading}
-            className="rounded-2xl border border-border bg-surface p-8"
+            className="rounded-2xl border border-border bg-surface p-6 sm:p-8"
           >
             <p className="text-lg font-semibold text-text">
               {goal.heading}
               {goal.org && (
-                <span className="font-normal text-text-muted"> — {goal.org}</span>
+                <span className="font-normal text-text-muted">, {goal.org}</span>
               )}
             </p>
             <p className="mt-4 whitespace-pre-line leading-relaxed text-text-muted">

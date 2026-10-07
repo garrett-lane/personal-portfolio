@@ -4,7 +4,7 @@ export const profile = {
     "Servant leader diving into the field of cyber security to better serve those around me.",
   bio:
     "I'm a senior studying Cyber Security Engineering at Iowa State University. I'm interested in network security, embedded systems, and the places where hardware and software security overlap. Outside of coursework, I like breaking things in CTFs and figuring out how to put them back together more securely.",
-  location: "Iowa State University — Class of 2027",
+  location: "Iowa State University, Class of 2027",
   // Written out like this (not a real @ / mailto link) so scrapers don't pick it up.
   email: "gthomp(at)iastate(dot)edu",
 };
@@ -37,7 +37,7 @@ export const futurePlans: Goal[] = [
   {
     heading: "Full-Time Industry Experience",
     blurb:
-      "Alongside my research and lab work, I want to keep pursuing full-time work in the field to gain hands-on, real-world experience — complementing what I've learned in the lab and building toward becoming a well-rounded security professional.",
+      "Alongside my research and lab work, I want to keep working full-time in the field to get real-world experience. Pairing that with what I've learned in the lab will help me grow into a well-rounded security professional.",
   },
 ];
 
@@ -61,7 +61,7 @@ export const projects: ProjectEntry[] = [
   {
     tag: "Senior Design Capstone",
     title: "[Project Title]",
-    description: "[One to two sentence description — what it does and the problem it solves.]",
+    description: "[One to two sentence description: what it does and the problem it solves.]",
     role: "[Add your role]",
     skillsGained: ["[Add skills or knowledge gained]"],
     bigPicture: "[Add big-picture contribution]",
@@ -69,56 +69,56 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "GitHub Repo", href: "#" }],
   },
   {
-    tag: "Embedded Systems — CPRE 2880",
+    tag: "Embedded Systems (CPRE 2880)",
     title: "Autonomous CyBot Navigation",
     description:
-      "Bare-metal C firmware for an iRobot Create–based CyBot that sweeps a servo-mounted IR and ultrasonic sensor to map obstacles, computes gaps wide enough to drive through, and navigates a test field on its own — avoiding boundary tape, cliffs, and bumps — until it finds and touches a balloon target. A second bot runs in manual mode, driven remotely from a Python GUI over a compact bit-packed UART protocol.",
-    role: "Team member on the robot's embedded firmware — autonomous navigation, sensor scanning and noise filtering, IR calibration, and the UART command protocol shared with the team's PC control GUI.",
+      "Bare-metal C firmware for an iRobot Create-based CyBot. The robot sweeps an IR and ultrasonic sensor on a servo to find obstacles, figures out which gaps are wide enough to drive through, and navigates a test field on its own while avoiding boundary tape, cliffs, and bumps. It keeps searching until it finds and touches a balloon target. A second bot runs in manual mode and is driven from a Python GUI using a one-byte command protocol over UART.",
+    role: "Worked on the robot's embedded firmware as part of a team. My work covered autonomous navigation, sensor scanning and noise filtering, IR calibration, and the UART protocol our PC control GUI used to talk to the robot.",
     skillsGained: [
-      "Register-level peripheral programming on the TI TM4C123 (GPIO interrupts, ADC, timers, UART)",
-      "Sensor fusion and noise filtering — exponential smoothing and spike rejection across IR and ultrasonic readings",
-      "IR sensor calibration via power regression against ultrasonic ground truth",
-      "Designing a compact one-byte binary protocol for robot ↔ PC communication",
-      "Geometry-based path planning: turning angular scan data into object widths and drivable gaps",
+      "Register-level programming on the TI TM4C123 (GPIO interrupts, ADC, timers, UART)",
+      "Filtering noisy IR and ultrasonic readings with exponential smoothing and spike rejection",
+      "Calibrating the IR sensor with a power regression against ultrasonic distance readings",
+      "Designing a one-byte binary protocol for communication between the robot and a PC",
+      "Turning angular scan data into object widths and drivable gaps for path planning",
     ],
-    bigPicture: "Took a robot from raw sensor voltages to a full autonomous search — the same sense, decide, act loop behind real-world autonomous systems — and showed how much reliability depends on filtering noisy hardware data before trusting it.",
+    bigPicture: "We took the robot from raw sensor voltages to a fully autonomous search. The biggest lesson for me was how unreliable hardware data can be, and how much filtering it takes before you can make decisions based on it.",
     stack: ["C", "TI TM4C123 (Tiva C)", "Code Composer Studio", "iRobot Create Open Interface", "Python", "PySide6", "Matplotlib"],
     // TODO: add GitHub link once the code is uploaded.
     links: [],
   },
   {
-    tag: "Software Design & Development — COMS 3090",
+    tag: "Software Design & Development (COMS 3090)",
     title: "CyMind",
     description:
-      "A full-stack Android app connecting college students with mental health professionals. Students track their mood and journal over time, book appointments, and chat live with counselors, while professionals publish articles and exercises and get real-time notifications — with separate experiences for students, professionals, and guests.",
-    role: "Android frontend developer on a four-person team (two frontend, two backend) — built and tested client screens including real-time group chat, professional resource management, and the student mood and journal tracker, wired to the Spring Boot backend over REST and WebSockets.",
+      "A full-stack Android app that connects college students with mental health professionals. Students can track their mood, keep a journal, book appointments, and chat with counselors. Professionals can publish articles and exercises and get notified in real time. Students, professionals, and guests each get their own version of the app.",
+    role: "Android frontend developer on a four-person team (two frontend, two backend). I built and tested screens including group chat, professional resource management, and the student mood and journal tracker, and connected them to our Spring Boot backend using REST and WebSockets.",
     skillsGained: [
-      "Android development in Java — activities, fragments, RecyclerView adapters, and role-based navigation",
-      "Client–server integration with Volley REST requests and authenticated API calls",
-      "Real-time features over WebSockets for live chat and push-style notifications",
-      "Data visualization of mood history with MPAndroidChart",
-      "UI system testing with Espresso and code coverage reporting",
-      "Team software practices — Git workflow, GitLab CI/CD pipelines, and shared design documentation",
+      "Android development in Java, including activities, fragments, RecyclerView adapters, and role-based navigation",
+      "Calling REST APIs with Volley, including authenticated requests",
+      "Building live chat and notifications over WebSockets",
+      "Charting mood history with MPAndroidChart",
+      "UI testing with Espresso and code coverage reports",
+      "Working on a team with Git, GitLab CI/CD pipelines, and shared design docs",
     ],
-    bigPicture: "Students often don't reach out for mental health support because finding help feels like a hurdle. CyMind puts self-tracking, trusted resources, and a direct line to professionals in one place — and building it end to end taught me how the frontend, backend, and database of a real multi-user system fit together.",
+    bigPicture: "A lot of students never reach out for mental health support because finding help feels like too much effort. CyMind puts mood tracking, resources, and a direct line to professionals in one app. Building it end to end showed me how the frontend, backend, and database of a multi-user system work together.",
     stack: ["Java", "Android", "Volley", "WebSockets", "Espresso", "Spring Boot", "MySQL / MariaDB", "GitLab CI"],
     // TODO: add GitHub link once the code is uploaded.
     links: [],
   },
   {
-    tag: "Cyber Security Education — CPRE 5300",
+    tag: "Cyber Security Education (CPRE 5300)",
     title: "Securing Your Home Network",
     description:
-      "An interactive Android app that teaches non-technical homeowners and renters how to lock down their home network. Short lessons on router credentials, SSIDs, Wi-Fi encryption, risky defaults like WPS and UPnP, guest networks, and firmware are each followed by decision-based scenarios — pick an unsafe option and the app explains the risk before letting you retry.",
-    role: "Sole developer — researched the content from CISA and NSA guidance, wrote the full screen-by-screen lesson and quiz script, and designed and built the app in Android Studio.",
+      "An interactive Android app that teaches homeowners and renters without a technical background how to secure their home network. It covers router passwords, SSIDs, Wi-Fi encryption, risky defaults like WPS and UPnP, guest networks, and firmware updates. Each short lesson is followed by scenarios where you choose what to do. If you pick an unsafe option, the app explains the risk and lets you try again.",
+    role: "Sole developer. I researched the content using CISA and NSA guidance, wrote the script for every lesson and quiz screen, and designed and built the app in Android Studio.",
     skillsGained: [
-      "Android app development in Kotlin — UI layouts, screen navigation, and state for interactive quizzes",
-      "Home network security — WPA2/WPA3, and why defaults like WPS, UPnP, and remote management are risky",
-      "Translating technical security guidance for a non-technical audience (ages ~20–70)",
-      "Applying adult-learning research: short scenarios with immediate feedback over long reading",
-      "Planning and scoping a solo project from research through a signed release build",
+      "Android development in Kotlin, including layouts, screen navigation, and quiz state",
+      "Home network security, including WPA2/WPA3 and why WPS, UPnP, and remote management are risky to leave on",
+      "Explaining technical security guidance to a non-technical audience (roughly ages 20 to 70)",
+      "Using adult-learning research to favor short scenarios with instant feedback over long readings",
+      "Planning a solo project from research all the way to a signed release build",
     ],
-    bigPicture: "Home networks are mostly left on insecure factory defaults because their owners don't know what the settings mean. This project turns CISA and NSA best practices into something an everyday user can actually act on — pushing security awareness beyond enterprise environments to the people who usually go without it.",
+    bigPicture: "Most home networks still run on insecure factory settings because the people who own them don't know what those settings do. This project takes CISA and NSA recommendations and puts them in a form an everyday person can follow, bringing security awareness to people outside of enterprise environments.",
     stack: ["Kotlin", "Android Studio", "Android SDK"],
     links: [{ label: "GitHub Repo", href: "https://github.com/garrett-lane/cpre-5300-project" }],
   },
@@ -129,7 +129,7 @@ export type Credential = {
   issuer: string;
   // Direct one-click verification link, when the issuer supports it.
   verifyHref?: string;
-  // Fallback for issuers (like Certiport) whose verify page can't be deep-linked —
+  // Fallback for issuers (like Certiport) whose verify page can't be deep-linked,
   // shown as a code to copy into their manual verification form.
   verifyCode?: { href: string; code: string };
 };
@@ -231,7 +231,7 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Information Security Analyst I",
     org: "American Equity",
-    period: "Aug 2026 – Present",
+    period: "Aug 2026 - Present",
     location: "Des Moines, IA",
     bullets: [
       "Responsible for daily operations within the Information Security team",
@@ -252,8 +252,8 @@ export const experience: ExperienceEntry[] = [
   },
   {
     role: "Teaching Assistant",
-    org: "Iowa State University — CYBE 2310 & CYBE 3310",
-    period: "Aug 2026 – Present",
+    org: "Iowa State University (CYBE 2310 & CYBE 3310)",
+    period: "Aug 2026 - Present",
     location: "Ames, IA",
     bullets: [
       "Working under Dr. Julie Rursch",
@@ -263,8 +263,8 @@ export const experience: ExperienceEntry[] = [
   },
   {
     role: "Peer Mentor / Teaching Assistant",
-    org: "Iowa State University — CPRE 1840, 1850 & 1860",
-    period: "Aug 2025 – May 2026",
+    org: "Iowa State University (CPRE 1840, 1850 & 1860)",
+    period: "Aug 2025 - May 2026",
     location: "Ames, IA",
     bullets: [
       "Working under Dr. Thomas Daniels",
@@ -275,7 +275,7 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Boeing Research Fellow",
     org: "Iowa State University",
-    period: "Aug 2025 – May 2026",
+    period: "Aug 2025 - May 2026",
     location: "Ames, IA",
     bullets: [
       "Working under Dr. Shana Moothedath and Ph.D. student Mahesh Bhat",

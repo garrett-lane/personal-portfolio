@@ -1,6 +1,6 @@
 # personal-portfolio
 
-Garrett Thompson's personal portfolio — built with React, TypeScript, and Tailwind CSS, deployed to GitHub Pages at [gthompson.me](https://gthompson.me).
+Garrett Thompson's personal portfolio. Built with React, TypeScript, and Tailwind CSS, deployed to GitHub Pages at [gthompson.me](https://gthompson.me).
 
 ## Stack
 
