@@ -59,14 +59,21 @@ export type ProjectEntry = {
 
 export const projects: ProjectEntry[] = [
   {
-    tag: "Senior Design Capstone",
-    title: "[Project Title]",
-    description: "[One to two sentence description: what it does and the problem it solves.]",
-    role: "[Add your role]",
-    skillsGained: ["[Add skills or knowledge gained]"],
-    bigPicture: "[Add big-picture contribution]",
-    stack: ["[Tech]", "[Tech]"],
-    links: [{ label: "GitHub Repo", href: "#" }],
+    tag: "Senior Design Capstone (In Progress, May 2027)",
+    title: "CyDegree",
+    description:
+      "An AI-assisted academic advising platform for Iowa State Software Engineering students. The information students need to plan their degree is spread across Workday, the course catalog, and their advisors, so problems like a missed prerequisite often get caught too late. Students sign in with their NetID, and CyDegree reads their Academic Progress Report and checks it against ISU's course requirements. An AI assistant flags prerequisite conflicts, answers questions, and recommends a course sequence that keeps them on track to graduate.",
+    role: "Security Engineer on a five-person team. I'm responsible for the security side of the platform, including NetID sign-in, protecting the student academic records the app handles, and making sure the AI assistant can't be used to expose data it shouldn't.",
+    skillsGained: [
+      "Threat modeling a web application that handles sensitive student records",
+      "Securing authentication with university NetID sign-in",
+      "Understanding the security risks of AI features, like prompt injection and data leakage",
+      "Protecting student data in line with privacy requirements like FERPA",
+      "Working on a large team through design documents and weekly progress reports",
+    ],
+    bigPicture: "Course planning mistakes can cost students a semester or more. CyDegree is meant to catch those problems early and make good advising easier to get. It's also a project I really enjoy, because I like user-centered design and here the users are students like me.",
+    stack: ["TypeScript", "AI / LLM integration", "NetID authentication", "ISU-hosted servers"],
+    links: [{ label: "Team Website", href: "https://sdmay27-17.sd.ece.iastate.edu/" }],
   },
   {
     tag: "Embedded Systems (CPRE 2880)",
@@ -83,7 +90,6 @@ export const projects: ProjectEntry[] = [
     ],
     bigPicture: "We took the robot from raw sensor voltages to a fully autonomous search. The biggest lesson for me was how unreliable hardware data can be, and how much filtering it takes before you can make decisions based on it.",
     stack: ["C", "TI TM4C123 (Tiva C)", "Code Composer Studio", "iRobot Create Open Interface", "Python", "PySide6", "Matplotlib"],
-    // TODO: add GitHub link once the code is uploaded.
     links: [],
   },
   {
@@ -102,7 +108,6 @@ export const projects: ProjectEntry[] = [
     ],
     bigPicture: "A lot of students never reach out for mental health support because finding help feels like too much effort. CyMind puts mood tracking, resources, and a direct line to professionals in one app. Building it end to end showed me how the frontend, backend, and database of a multi-user system work together.",
     stack: ["Java", "Android", "Volley", "WebSockets", "Espresso", "Spring Boot", "MySQL / MariaDB", "GitLab CI"],
-    // TODO: add GitHub link once the code is uploaded.
     links: [],
   },
   {
