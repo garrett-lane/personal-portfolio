@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { profile, socials } from "../data/content";
 
 export default function Footer() {
+  const [showEmail, setShowEmail] = useState(false);
+
   return (
     <footer id="contact" className="fade-in mx-auto max-w-5xl px-6 py-16">
       <p className="kicker text-sm font-medium uppercase text-accent-soft">
@@ -12,12 +15,21 @@ export default function Footer() {
 
       <div className="mt-6 rounded-2xl border border-border bg-surface p-6 sm:p-8">
         <div className="flex flex-wrap gap-3">
-          <span
-            title={profile.email}
-            className="cursor-default rounded-full border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
-          >
-            Email
-          </span>
+          {/* Tap to reveal (a hover tooltip never shows on phones). Once shown, select-all
+              lets one tap select the whole address for copying. */}
+          {showEmail ? (
+            <span className="select-all rounded-full border border-accent-soft px-4 py-2 text-sm font-medium text-text">
+              {profile.email}
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setShowEmail(true)}
+              className="cursor-pointer rounded-full border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
+            >
+              Email
+            </button>
+          )}
           {socials.map((social) => (
             <a
               key={social.label}

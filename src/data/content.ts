@@ -17,8 +17,7 @@ export type Essay = {
 export const essays: Essay[] = [
   { title: "Cybersecurity Ethics Essay", href: "/cybersecurity-ethics-essay.pdf" },
   { title: "Cumulative Reflection", href: "/cumulative-reflection.pdf" },
-  // TODO: add once written.
-  { title: "General Education Reflection Essay", href: "#" },
+  { title: "General Education Reflection", href: "/general-education-reflection.pdf" },
 ];
 
 export type Goal = {
