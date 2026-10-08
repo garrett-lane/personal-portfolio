@@ -71,6 +71,8 @@ export default function Projects() {
                 <a
                   key={link.label}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full border border-border px-4 py-1.5 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
                 >
                   {link.label} ↗

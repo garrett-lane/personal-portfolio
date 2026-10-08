@@ -15,6 +15,8 @@ export default function Essays() {
           <a
             key={essay.title}
             href={essay.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent-soft/50"
           >
             <p className="font-display text-lg font-semibold text-text">
