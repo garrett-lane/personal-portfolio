@@ -1,87 +1,87 @@
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { projects } from "../data/content";
+import Section from "./Section";
 
 export default function Projects() {
   return (
-    <section id="projects" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Projects
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Featured Projects
-      </h2>
-
-      <div className="mt-8 space-y-6">
+    <Section id="projects" title="Featured Projects">
+      <div className="space-y-16 md:space-y-20">
         {projects.map((project) => (
-          <div
-            key={project.title}
-            className="rounded-2xl border border-border bg-surface p-6 sm:p-8 transition-colors hover:border-accent-soft/50"
-          >
-            {project.tag && (
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
-                {project.tag}
-              </p>
-            )}
-            <h3 className="font-display mt-2 text-xl font-semibold text-text">
-              {project.title}
-            </h3>
-            <p className="mt-3 whitespace-pre-line leading-relaxed text-text-muted">
-              {project.description}
-            </p>
-
-            <dl className="mt-6 grid gap-5 sm:grid-cols-2">
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
-                  My Role
-                </dt>
-                <dd className="mt-1.5 text-text-muted">{project.role}</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
-                  Skills / Knowledge Gained
-                </dt>
-                <dd className="mt-1.5">
-                  <ul className="list-disc pl-5 space-y-1 text-text-muted">
-                    {project.skillsGained.map((skill) => (
-                      <li key={skill}>{skill}</li>
+          <article key={project.title} className="reveal grid gap-8 lg:grid-cols-12 lg:gap-10">
+            {/* Left rail: what kind of project it is, what it was built with, where to see it.
+                Sticky on desktop so it stays beside the longer write-up. */}
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-24">
+                {project.tag && (
+                  <p className="font-mono text-sm font-medium leading-relaxed text-accent">{project.tag}</p>
+                )}
+                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-text md:text-3xl">
+                  {project.title}
+                </h3>
+                <ul className="mt-5 flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <li
+                      key={tech}
+                      className="rounded-md bg-surface px-2 py-1 font-mono text-xs text-text-muted"
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+                {project.links.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1 text-sm font-medium text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-accent"
+                      >
+                        {link.label}
+                        <ArrowUpRightIcon
+                          size={14}
+                          className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </a>
                     ))}
-                  </ul>
-                </dd>
+                  </div>
+                )}
               </div>
-              <div className="sm:col-span-2">
-                <dt className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
-                  Big-Picture Contribution
-                </dt>
-                <dd className="mt-1.5 text-text-muted">{project.bigPicture}</dd>
-              </div>
-            </dl>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-border px-2.5 py-1 text-xs text-text-muted"
-                >
-                  {tech}
-                </span>
-              ))}
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              {project.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-border px-4 py-1.5 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
-                >
-                  {link.label} ↗
-                </a>
-              ))}
+            <div className="lg:col-span-8">
+              <p className="whitespace-pre-line text-lg leading-relaxed text-text">
+                {project.description}
+              </p>
+
+              <dl className="mt-8 grid gap-x-10 gap-y-7 border-t border-border pt-8 md:grid-cols-2">
+                <div>
+                  <dt className="text-sm font-semibold text-text">My Role</dt>
+                  <dd className="mt-2 leading-relaxed text-text-muted">{project.role}</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-text">Big-Picture Contribution</dt>
+                  <dd className="mt-2 leading-relaxed text-text-muted">{project.bigPicture}</dd>
+                </div>
+                <div className="md:col-span-2">
+                  <dt className="text-sm font-semibold text-text">Skills / Knowledge Gained</dt>
+                  <dd className="mt-3">
+                    <ul className="grid gap-x-10 gap-y-2.5 md:grid-cols-2">
+                      {project.skillsGained.map((skill) => (
+                        <li key={skill} className="flex gap-3 leading-relaxed text-text-muted">
+                          <span aria-hidden className="mt-[0.7em] h-px w-3 shrink-0 bg-accent" />
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,60 +1,58 @@
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { credentials } from "../data/content";
+import Section from "./Section";
+
+const verifyLinkClass =
+  "group inline-flex items-center gap-1 text-sm font-medium text-text underline decoration-border underline-offset-4 transition-colors hover:decoration-accent";
 
 export default function Credentials() {
   return (
-    <section id="credentials" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Credentials
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Certifications
-      </h2>
-
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <Section id="credentials" title="Certifications">
+      {/* gap-px over a border-colored background draws single hairlines between cells. */}
+      <div className="reveal grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
         {credentials.map((credential) => (
-          <div
-            key={credential.name}
-            className="flex flex-col rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent-soft/50"
-          >
-            <p className="text-xs font-semibold uppercase tracking-wide text-accent-soft">
-              {credential.issuer}
-            </p>
-            <p className="mt-2 font-display text-lg font-semibold text-text">
+          <div key={credential.name} className="flex flex-col bg-bg p-6 md:p-8">
+            <p className="font-mono text-xs text-text-muted">{credential.issuer}</p>
+            <p className="mt-2 text-xl font-semibold tracking-tight text-text md:text-2xl">
               {credential.name}
             </p>
 
-            {credential.verifyHref && (
-              <a
-                href={credential.verifyHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm text-accent-soft hover:underline"
-              >
-                Verify ↗
-              </a>
-            )}
-
-            {credential.verifyCode && (
-              <div className="mt-4 text-sm">
+            <div className="mt-auto pt-6">
+              {credential.verifyHref && (
                 <a
-                  href={credential.verifyCode.href}
+                  href={credential.verifyHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent-soft hover:underline"
+                  className={verifyLinkClass}
                 >
-                  Verify ↗
+                  Verify
+                  <ArrowUpRightIcon size={14} className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
-                <p className="mt-1 text-text-muted">
-                  Code:{" "}
-                  <span className="font-medium text-text">
-                    {credential.verifyCode.code}
-                  </span>
-                </p>
-              </div>
-            )}
+              )}
+
+              {credential.verifyCode && (
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <a
+                    href={credential.verifyCode.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={verifyLinkClass}
+                  >
+                    Verify
+                    <ArrowUpRightIcon size={14} className="text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                  <p className="text-sm text-text-muted">
+                    Code{" "}
+                    <span className="select-all font-mono text-text">
+                      {credential.verifyCode.code}
+                    </span>
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,39 +1,34 @@
 import { experience } from "../data/content";
+import Section from "./Section";
 
 export default function Experience() {
   return (
-    <section id="experience" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Experience
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Work Experience
-      </h2>
-
-      <div className="mt-8 space-y-5">
+    <Section id="experience" title="Work Experience">
+      {/* Timeline: dates in a gutter on the left, one continuous rule beside the roles. */}
+      <ol>
         {experience.map((entry) => (
-          <div
+          <li
             key={`${entry.org}-${entry.role}`}
-            className="rounded-2xl border border-border bg-surface p-6 sm:p-7 transition-colors hover:border-accent-soft/50"
+            className="reveal grid gap-2 md:grid-cols-12 md:gap-10"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-lg font-semibold text-text">
-                {entry.role}
-                <span className="font-normal text-text-muted">, {entry.org}</span>
-              </h3>
-              <span className="text-sm font-medium text-accent-soft">
-                {entry.period}
-              </span>
+            <p className="pt-1 font-mono text-sm text-text-muted md:col-span-3">{entry.period}</p>
+            <div className="pb-12 md:col-span-9 md:border-l md:border-border md:pl-10">
+              <h3 className="text-xl font-semibold tracking-tight text-text">{entry.role}</h3>
+              <p className="mt-1 text-text-muted">
+                {entry.org}, {entry.location}
+              </p>
+              <ul className="mt-4 space-y-2">
+                {entry.bullets.map((bullet) => (
+                  <li key={bullet} className="flex gap-3 leading-relaxed text-text-muted">
+                    <span aria-hidden className="mt-[0.7em] h-px w-3 shrink-0 bg-accent" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="mt-1 text-sm text-text-muted">{entry.location}</p>
-            <ul className="mt-4 list-disc pl-5 space-y-1.5 text-text-muted">
-              {entry.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          </div>
+          </li>
         ))}
-      </div>
-    </section>
+      </ol>
+    </Section>
   );
 }

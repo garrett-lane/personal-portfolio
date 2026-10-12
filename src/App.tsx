@@ -12,9 +12,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    // overflow-x-clip keeps the hero glow from widening the page on phones (and, unlike
-    // overflow-hidden, doesn't break the sticky nav).
-    <div className="min-h-screen overflow-x-clip bg-bg font-sans text-text">
+    <div className="min-h-dvh bg-bg font-sans text-text">
       <Nav />
       <main>
         <Hero />

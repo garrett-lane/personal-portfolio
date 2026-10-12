@@ -1,31 +1,37 @@
 import { scoutingAwards } from "../data/content";
+import Section from "./Section";
 
 export default function ScoutingAwards() {
-  return (
-    <section id="scouting" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Scouting
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Scouting Awards
-      </h2>
+  const [featured, ...rest] = scoutingAwards;
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {scoutingAwards.map((award, i) => (
+  return (
+    <Section id="scouting" title="Scouting Awards">
+      {/* The first award (Eagle Scout) leads as a large tile; the rest stack beside it. */}
+      <div className="reveal grid gap-4 md:grid-cols-12">
+        {featured && (
+          <div className="flex min-h-56 flex-col justify-end rounded-md border border-accent/25 bg-accent/[0.06] p-6 md:col-span-7 md:row-span-2 md:p-8">
+            <p className="text-3xl font-semibold tracking-tight text-text md:text-5xl">
+              {featured.name}
+            </p>
+            <p className="mt-3 text-text-muted">
+              {featured.org}
+              {featured.date && <>, <span className="font-mono text-sm">{featured.date}</span></>}
+            </p>
+          </div>
+        )}
+        {rest.map((award, i) => (
           <div
             key={`${award.name}-${i}`}
-            className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent-soft/50"
+            className="flex flex-col justify-end rounded-md border border-border bg-surface p-6 md:col-span-5"
           >
-            <p className="font-display text-lg font-semibold text-text">
-              {award.name}
-            </p>
-            <p className="mt-1 text-sm text-text-muted">
+            <p className="text-xl font-semibold tracking-tight text-text">{award.name}</p>
+            <p className="mt-1.5 text-text-muted">
               {award.org}
-              {award.date && <>, {award.date}</>}
+              {award.date && <>, <span className="font-mono text-sm">{award.date}</span></>}
             </p>
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,31 +1,29 @@
+import { ArrowUpRightIcon, FilePdfIcon } from "@phosphor-icons/react";
 import { essays } from "../data/content";
+import Section from "./Section";
 
 export default function Essays() {
   return (
-    <section id="essays" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Writing
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Essays &amp; Reflections
-      </h2>
-
-      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+    <Section id="essays" title="Essays & Reflections">
+      <ul className="reveal max-w-3xl divide-y divide-border border-y border-border">
         {essays.map((essay) => (
-          <a
-            key={essay.title}
-            href={essay.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent-soft/50"
-          >
-            <p className="font-display text-lg font-semibold text-text">
-              {essay.title}
-            </p>
-            <p className="mt-3 text-sm text-accent-soft">Read ↗</p>
-          </a>
+          <li key={essay.title}>
+            <a
+              href={essay.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 py-5 transition-colors"
+            >
+              <FilePdfIcon size={22} className="shrink-0 text-text-muted transition-colors group-hover:text-accent" />
+              <span className="flex-1 text-lg font-medium text-text">{essay.title}</span>
+              <ArrowUpRightIcon
+                size={18}
+                className="shrink-0 text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+          </li>
         ))}
-      </div>
-    </section>
+      </ul>
+    </Section>
   );
 }

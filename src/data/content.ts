@@ -3,7 +3,7 @@ export const profile = {
   tagline:
     "Servant leader diving into the field of cyber security to better serve those around me.",
   bio:
-    "I'm a senior studying Cyber Security Engineering at Iowa State University. I'm interested in network security, embedded systems, and the places where hardware and software security overlap. Outside of coursework, I like breaking things in CTFs and figuring out how to put them back together more securely.",
+    "I got into cyber security because I want to protect the people and systems around me, a value that grew out of my years in Scouting. I'm most interested in the human side of security: making security decisions around the people who actually use a system, and helping them understand why those decisions matter. I enjoy security education, and I like engineering solutions and architectures that fit what each project needs.",
   location: "Iowa State University, Class of 2027",
   // Written out like this (not a real @ / mailto link) so scrapers don't pick it up.
   email: "gthomp(at)iastate(dot)edu",
@@ -31,12 +31,12 @@ export const futurePlans: Goal[] = [
     heading: "Master of Science in Cyber Security",
     org: "Iowa State University",
     blurb:
-      "After finishing my undergrad, I plan to stay at Iowa State to pursue a Master of Science in Cyber Security, continuing to build on the network security and embedded systems work from my coursework, research, and internships.",
+      "After finishing my undergrad, I plan to pursue a Master of Science in Cyber Security online through Iowa State, continuing to build on the network security and embedded systems work from my coursework, research, and internships.",
   },
   {
     heading: "Full-Time Industry Experience",
     blurb:
-      "Alongside my research and lab work, I want to keep working full-time in the field to get real-world experience. Pairing that with what I've learned in the lab will help me grow into a well-rounded security professional.",
+      "While pursuing my master's degree online, I want to keep working full-time in the field to get real-world experience. Pairing that with my graduate coursework will help me grow into a well-rounded security professional.",
   },
 ];
 

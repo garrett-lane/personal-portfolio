@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ListIcon, XIcon } from "@phosphor-icons/react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -17,16 +18,16 @@ export default function Nav() {
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/70 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-bg/80 backdrop-blur-md">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a
           href="#top"
           onClick={close}
-          className="whitespace-nowrap font-display text-base font-semibold text-text"
+          className="whitespace-nowrap text-[15px] font-semibold tracking-tight text-text"
         >
           Garrett Thompson
         </a>
-        <ul className="hidden gap-5 text-sm text-text-muted lg:flex">
+        <ul className="hidden gap-6 text-sm text-text-muted lg:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="transition-colors hover:text-text">
@@ -43,22 +44,9 @@ export default function Nav() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="-mr-2 rounded-lg p-2 text-text-muted transition-colors hover:text-text lg:hidden"
+          className="-mr-2 rounded-md p-2 text-text-muted transition-colors hover:text-text lg:hidden"
         >
-          <svg
-            viewBox="0 0 24 24"
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          >
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
+          {open ? <XIcon size={22} /> : <ListIcon size={22} />}
         </button>
       </nav>
 
@@ -66,7 +54,7 @@ export default function Nav() {
       {open && (
         <ul
           id="mobile-menu"
-          className="absolute inset-x-0 top-full border-b border-border bg-bg px-6 py-2 lg:hidden"
+          className="absolute inset-x-0 top-full border-b border-border bg-bg px-4 py-2 sm:px-6 lg:hidden"
         >
           {links.map((link) => (
             <li key={link.href}>

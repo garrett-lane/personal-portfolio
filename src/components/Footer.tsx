@@ -1,52 +1,60 @@
 import { useState } from "react";
+import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { profile, socials } from "../data/content";
+
+const socialIcons: Record<string, typeof GithubLogoIcon> = {
+  GitHub: GithubLogoIcon,
+  LinkedIn: LinkedinLogoIcon,
+};
+
+const pillClass =
+  "inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-text transition-colors hover:border-text-muted active:scale-[0.98]";
 
 export default function Footer() {
   const [showEmail, setShowEmail] = useState(false);
 
   return (
-    <footer id="contact" className="fade-in mx-auto max-w-5xl px-6 py-16">
-      <p className="kicker text-sm font-medium uppercase text-accent-soft">
-        Contact
-      </p>
-      <h2 className="font-display mt-2 text-3xl font-semibold text-text">
-        Get in Touch
-      </h2>
+    <footer id="contact" className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="border-t border-border pb-10 pt-16 md:pt-24">
+        <h2 className="reveal text-4xl font-semibold tracking-tighter text-text md:text-6xl">
+          Get in Touch
+        </h2>
 
-      <div className="mt-6 rounded-2xl border border-border bg-surface p-6 sm:p-8">
-        <div className="flex flex-wrap gap-3">
+        <div className="reveal mt-10 flex flex-wrap gap-3">
           {/* Tap to reveal (a hover tooltip never shows on phones). Once shown, select-all
               lets one tap select the whole address for copying. */}
           {showEmail ? (
-            <span className="select-all rounded-full border border-accent-soft px-4 py-2 text-sm font-medium text-text">
+            <span className="inline-flex select-all items-center gap-2 rounded-md border border-accent px-4 py-2.5 font-mono text-sm text-text">
+              <EnvelopeSimpleIcon size={18} className="text-accent" />
               {profile.email}
             </span>
           ) : (
-            <button
-              type="button"
-              onClick={() => setShowEmail(true)}
-              className="cursor-pointer rounded-full border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
-            >
+            <button type="button" onClick={() => setShowEmail(true)} className={`${pillClass} cursor-pointer`}>
+              <EnvelopeSimpleIcon size={18} />
               Email
             </button>
           )}
-          {socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-4 py-2 text-sm font-medium text-text-muted transition-colors hover:border-accent-soft hover:text-text"
-            >
-              {social.label}
-            </a>
-          ))}
+          {socials.map((social) => {
+            const Icon = socialIcons[social.label];
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={pillClass}
+              >
+                {Icon && <Icon size={18} />}
+                {social.label}
+              </a>
+            );
+          })}
         </div>
-      </div>
 
-      <p className="mt-10 text-center text-sm text-text-muted">
-        © {new Date().getFullYear()} {profile.name}
-      </p>
+        <p className="mt-20 text-sm text-text-muted">
+          © {new Date().getFullYear()} {profile.name}
+        </p>
+      </div>
     </footer>
   );
 }
